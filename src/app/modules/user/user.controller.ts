@@ -26,8 +26,9 @@ const getUser = catchAsync(async (req, res) => {
     });
   });
 const updateUser = catchAsync(async (req, res) => {
- 
-    const result = await UserServices.updateUser(req.body)
+  console.log(req.body)
+ const {id} = req.params
+    const result = await UserServices.updateUserInDb(id,req.body)
   
     sendResponse(res, {
       statusCode: httpStatus.OK,
