@@ -6,6 +6,8 @@ import { Server } from "http";
 let server: Server;
 async function main() {
   try {
+    console.log("server starting");
+
     await mongoose.connect(config.DATABASE_URL as string);
     console.log("connected db");
     server = app.listen(config.port, () => {
