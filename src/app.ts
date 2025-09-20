@@ -8,7 +8,8 @@ import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 const app: Application = express();
 const allowedOrigins = [
   "http://localhost:3000",     
-  "https://www.galibhossain.dev",   
+  "https://www.galibhossain.dev",
+  "https://mdgalibhossain.vercel.app"
 ];
 //parsers
 app.use(express.json());
