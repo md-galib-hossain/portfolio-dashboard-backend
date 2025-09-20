@@ -6,11 +6,18 @@ import router from "./app/routes";
 import notFound from "./app/middlewares/notFound";
 import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 const app: Application = express();
-
+const allowedOrigins = [
+  "http://localhost:3000",     
+  "https://www.galibhossain.dev",   
+];
 //parsers
 app.use(express.json());
-app.use(cors());
-
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true, 
+  })
+);
 app.use("/api/v1", router);
 
 const test = async (req: Request, res: Response) => {
